@@ -1,4 +1,4 @@
-# TEXT COMPACTOR**Zero-loss semantic compression. Same meaning, tighter form, no drift.**
+# TEXT COMPACTOR
 
 
 
@@ -10,7 +10,7 @@ Users bring their own API keys to strip filler, repetition, and dead phrasing ac
 
 
 
----### THE AUDIT ENGINE
+### THE AUDIT ENGINE
 
 
 
@@ -18,8 +18,8 @@ The defining technical feature of this application is the **Preservation Audit**
 
 
 
-To solve this, Text Compactor forces the LLM into a strict "Forensic Editor" role. Before any API request is sent, a pre-execution regex engine extracts high-value tokens from the user's text. ```yaml
-
+To solve this, Text Compactor forces the LLM into a strict "Forensic Editor" role. Before any API request is sent, a pre-execution regex engine extracts high-value tokens from the user's text. 
+```yaml
 Protected_Entities:
 
   - Exact Quotes ("...")
@@ -31,15 +31,13 @@ Protected_Entities:
   - Percentages and Timeframes (15%, 45 days)
 
   - Compliance Acronyms (HIPAA, ADA, OSHA)
-
+```
 Post-execution, the engine verifies the existence of these exact tokens in the output. If the LLM amputated a vital fact, the system detects the discrepancy and automatically triggers a secondary repair prompt to restore the missing data.
-
+```
 Diff
 
-
-
 - DRAFT: The patient was seen for compliance checks.+ VERIFIED: The patient was seen on 04/12/2026 for ADA compliance checks.
-
+```
 PRIMARY USE CASES
 
 Professional Writers: Tightening bloated articles or manuscripts to meet strict word counts without altering the author's core thesis.
